@@ -1,5 +1,5 @@
 import { createElement } from '../lib/dom';
-import 'search.scss';
+import './search.scss';
 
 export function createMovieSearch() {
   const movieSearch = createElement('input', {
@@ -10,10 +10,10 @@ export function createMovieSearch() {
   return movieSearch;
 }
 
-export function createRandomButton() {
-  const randomButton = createElement('click', {
+export function createRandomButton(text) {
+  const randomButton = createElement('button', {
     className: 'button',
-    type: 'button'
+    innerText: text
   });
   return randomButton;
 }
