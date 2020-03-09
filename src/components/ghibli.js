@@ -7,9 +7,10 @@ export function movieListings(ghibli) {
   });
 
   ghibli.items.forEach(item => {
+    console.log(item);
     const card = createElement('div', {
       className: 'card',
-      innerText: item
+      innerText: item.title
     });
     card.addEventListener('click', () => {
       ghibli.onSearchResultClick(item);
@@ -17,4 +18,5 @@ export function movieListings(ghibli) {
     appendContent(container, card);
     console.log('card: ', card);
   });
+  return container;
 }

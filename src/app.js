@@ -33,6 +33,7 @@ export function app() {
   let searchResults = null;
   async function searchedMovies() {
     const filteredMovies = await filterMovies(searchMovie.value);
+    console.log(filteredMovies);
     searchResults = movieListings({
       items: filteredMovies
     });
@@ -44,7 +45,7 @@ export function app() {
   appendContent(main, [intro, searchMovie, btn]);
 
   searchMovie.addEventListener('input', event => {
-    /*main.removeChild(searchResults);*/
+    main.removeChild(searchResults);
     searchedMovies();
     const searchValue = event.target.value.toLowerCase();
     sessionStorage.setItem('searchValue', searchValue);
