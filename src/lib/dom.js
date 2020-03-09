@@ -12,6 +12,11 @@ export function appendContent(parent, content) {
       parent.appendChild(element);
     });
   } else {
-    parent.appendChild(content);
+    if (typeof content === 'undefined') {
+      const emptyElement = createElement('div');
+      parent.appendChild(emptyElement);
+    } else {
+      parent.appendChild(content);
+    }
   }
 }
